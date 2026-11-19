@@ -1527,7 +1527,10 @@ class TraktorZ1MK2Class {
   }
 }
 
-var TraktorZ1MK2 = new TraktorZ1MK2Class();
+// Exporting retains this top-level `var` through bundling. The final build step
+// removes the ES-module export marker so Mixxx can resolve this name through the
+// mapping XML's `functionprefix`.
+export var TraktorZ1MK2 = new TraktorZ1MK2Class();
 
 // workaround to avoid global var being automatically removed by the bundler
 var keep = TraktorZ1MK2;

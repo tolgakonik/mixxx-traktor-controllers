@@ -13,7 +13,7 @@
     "typescript": "^5.9.2"
   },
   "scripts": {
-    "build": "tsdown && cp res/*.xml dist/",
+    "build": "tsdown && node scripts/finalize-mixxx-bundle.mjs && cp res/*.xml dist/",
     "copy": "cp dist/* ~/.mixxx/controllers/",
     "convert-font": "node ./src/convert-font.ts"
   }
